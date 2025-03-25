@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Calculator</title>
+    <style>
+      table {
+        border: 2px solid black;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #f0f0f0; /* Light gray background */
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 20px auto; /* Center the table */
+      }
+      td {
+        padding: 5px;
+        text-align: center;
+      }
+      input[type="text"] {
+        width: 80px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        width: 60px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #e0e0e0; /* Light gray for buttons */
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td colspan="4"><strong>Simple Calculator</strong></td>
+      </tr>
+      <tr>
+        <td>val1</td>
+        <td><input type="text" id="val1" /></td>
+        <td>val2</td>
+        <td><input type="text" id="val2" /></td>
+      </tr>
+      <tr>
+        <td><button onclick="calculate('add')">Add</button></td>
+        <td><button onclick="calculate('sub')">sub</button></td>
+        <td><button onclick="calculate('mul')">mul</button></td>
+        <td><button onclick="calculate('div')">div</button></td>
+      </tr>
+      <tr>
+        <td>Ans</td>
+        <td><input type="text" id="output" readonly /></td>
+        <td colspan="2"><button onclick="clearAll()">clear all</button></td>
+      </tr>
+    </table>
+
+    <script>
+      function calculate(operation) {
+        var val1 = parseFloat(document.getElementById("val1").value);
+        var val2 = parseFloat(document.getElementById("val2").value);
+        var result;
+
+        if (isNaN(val1) || isNaN(val2)) {
+          alert("Please enter valid numbers");
+          return;
+        }
+
+        switch (operation) {
+          case "add":
+            result = val1 + val2;
+            break;
+          case "sub":
+            result = val1 - val2;
+            break;
+          case "mul":
+            result = val1 * val2;
+            break;
+          case "div":
+            if (val2 === 0) {
+              alert("Cannot divide by zero");
+              return;
+            }
+            result = val1 / val2;
+            break;
+        }
+
+        document.getElementById("output").value = result;
+      }
+
+      function clearAll() {
+        document.getElementById("val1").value = "";
+        document.getElementById("val2").value = "";
+        document.getElementById("output").value = "";
+      }
+    </script>
+  </body>
+</html>
