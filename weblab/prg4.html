@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Squares and Cubes of Numbers</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: antiquewhite;
+        text-align: center;
+      }
+
+      table {
+        width: 50%;
+        border-collapse: collapse;
+      }
+
+      th {
+        padding: 10px;
+        background-color: lightgreen;
+      }
+
+      td {
+        padding: 10px;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Squares and Cubes of Numbers from 0 to 10</h1>
+    <table border="2px" align="center">
+      <thead>
+        <tr>
+          <th>Number</th>
+          <th>Square</th>
+          <th>Cube</th>
+        </tr>
+      </thead>
+
+      <tbody id="table-body"></tbody>
+    </table>
+
+    <script>
+      const tbody = document.getElementById("table-body");
+
+      for (let i = 0; i <= 10; i++) {
+        let square = i * i;
+        let cube = i * i * i;
+
+        let row = document.createElement("tr");
+        let cell1 = document.createElement("td");
+        let cell2 = document.createElement("td");
+        let cell3 = document.createElement("td");
+
+        cell1.textContent = i;
+        cell2.textContent = square;
+        cell3.textContent = cube;
+
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+        row.appendChild(cell3);
+
+        tbody.appendChild(row);
+      }
+    </script>
+  </body>
+</html>

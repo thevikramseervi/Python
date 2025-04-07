@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: antiquewhite;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .container {
+        background-color: white;
+        width: 520px;
+        margin: 150px auto;
+        border: 2px solid black;
+        border-radius: 5px;
+      }
+
+      td {
+        padding: 10px;
+      }
+
+      th,
+      button {
+        padding: 10px;
+        background-color: lightgreen;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+      }
+
+      .clear {
+        background-color: coral;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <table>
+        <tr>
+          <th colspan="4">Simple Calculator</th>
+        </tr>
+        <tr>
+          <td>Val 1</td>
+          <td>
+            <input type="number" id="val1" />
+          </td>
+          <td>Val 2</td>
+          <td>
+            <input type="number" id="val2" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <button onclick="calc('add')">ADD</button>
+          </td>
+          <td>
+            <button onclick="calc('sub')">SUB</button>
+          </td>
+          <td>
+            <button onclick="calc('mul')">MUL</button>
+          </td>
+          <td>
+            <button onclick="calc('div')">DIV</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Ans</td>
+          <td>
+            <input type="number" id="ans" />
+          </td>
+          <td colspan="2">
+            <button class="clear" onclick="clearAll()">Clear All</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      function calc(operation) {
+        const num1 = parseFloat(document.getElementById("val1").value);
+        const num2 = parseFloat(document.getElementById("val2").value);
+        const ans = document.getElementById("ans");
+
+        if (isNaN(num1) || isNaN(num2)) {
+          alert("Enter a valid number");
+          return;
+        }
+
+        let res;
+        switch (operation) {
+          case "add":
+            res = num1 + num2;
+            break;
+          case "sub":
+            res = num1 - num2;
+            break;
+          case "mul":
+            res = num1 * num2;
+            break;
+          case "div":
+            if (num2 == 0) {
+              alert("Cannot divide by zero");
+              return;
+            }
+            res = num1 / num2;
+            break;
+        }
+        ans.value = res;
+      }
+
+      function clearAll() {
+        document.getElementById("val1").value = "";
+        document.getElementById("val2").value = "";
+        document.getElementById("ans").value = "";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Showcase</title>
+    <style>
+      /* Base Styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("/api/placeholder/800/600");
+        background-size: cover;
+        margin: 0;
+        padding: 20px;
+        cursor: help;
+      }
+
+      /* Different Font and Text Styles */
+      h1 {
+        font-family: Georgia, serif;
+        font-size: 32px;
+        text-decoration: underline;
+        color: #333;
+      }
+
+      .fancy-text {
+        font-family: "Times New Roman", serif;
+        font-style: italic;
+        font-weight: bold;
+      }
+
+      /* Working with Layers */
+      .layers-container {
+        position: relative;
+        height: 200px;
+        margin: 20px 0;
+      }
+
+      .box {
+        position: absolute;
+        padding: 15px;
+        border-radius: 5px;
+      }
+
+      .box-1 {
+        background-color: rgba(255, 0, 0, 0.7);
+        top: 10px;
+        left: 10px;
+        z-index: 1;
+      }
+
+      .box-2 {
+        background-color: rgba(0, 255, 0, 0.7);
+        top: 50px;
+        left: 70px;
+        z-index: 2;
+      }
+
+      .box-3 {
+        background-color: rgba(0, 0, 255, 0.7);
+        top: 90px;
+        left: 130px;
+        z-index: 3;
+      }
+
+      /* Styling Links */
+      a:link {
+        color: blue;
+        text-decoration: none;
+      }
+
+      a:visited {
+        color: purple;
+      }
+
+      a:hover {
+        color: red;
+        text-decoration: underline;
+      }
+
+      a:active {
+        color: orange;
+      }
+
+      /* Cursor Examples */
+      .cursor-section div {
+        display: inline-block;
+        width: 100px;
+        height: 50px;
+        margin: 10px;
+        background-color: #eee;
+        text-align: center;
+        line-height: 50px;
+      }
+
+      .cursor-pointer {
+        cursor: pointer;
+      }
+
+      .cursor-text {
+        cursor: text;
+      }
+
+      .cursor-move {
+        cursor: move;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS Techniques Demo</h1>
+
+    <!-- Font Styles -->
+    <p>This is normal text.</p>
+    <p class="fancy-text">This is fancy styled text.</p>
+
+    <!-- Background Images -->
+    <p>The body has a background image.</p>
+
+    <!-- Layers -->
+    <h2>Layering with z-index</h2>
+    <div class="layers-container">
+      <div class="box box-1">Layer 1</div>
+      <div class="box box-2">Layer 2</div>
+      <div class="box box-3">Layer 3</div>
+    </div>
+
+    <!-- Links -->
+    <h2>Link Styles</h2>
+    <p>
+      <a href="#">Normal link</a> |
+      <a href="https://example.com">Visited link</a>
+    </p>
+
+    <!-- Cursors -->
+    <h2>Custom Cursors</h2>
+    <div class="cursor-section">
+      <div class="cursor-pointer">Pointer</div>
+      <div class="cursor-text">Text</div>
+      <div class="cursor-move">Move</div>
+    </div>
+  </body>
+</html>
